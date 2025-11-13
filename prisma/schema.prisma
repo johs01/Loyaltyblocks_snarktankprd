@@ -1,0 +1,123 @@
+// This is your Prisma schema file
+// Learn more: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Organizations represent tenants in the multi-tenant architecture
+// Each organization has its own isolated set of customers, users, and settings
+model Organization {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique // Used in URL path: /[tenantId]/...
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  customers            Customer[]
+  users                User[]
+  settings             OrganizationSettings?
+
+  @@map("organizations")
+}
+
+// Customers are people who register via the public form
+// They may or may not have internal user accounts
+model Customer {
+  id              String    @id @default(cuid())
+  organizationId  String    @map("organization_id")
+
+  // Personal Information
+  firstName       String    @map("first_name")
+  lastName        String    @map("last_name")
+  phone           String    // Stored in E.164 format (e.g., +11234567890)
+  birthDate       DateTime  @map("birth_date")
+
+  // Optional fields
+  email           String?
+  addressLine1    String?   @map("address_line1")
+  addressLine2    String?   @map("address_line2")
+  city            String?
+  state           String?
+  postalCode      String?   @map("postal_code")
+  country         String?
+
+  // Consent and metadata
+  consentGiven    Boolean   @default(true) @map("consent_given")
+
+  // Tracking
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  createdBy       String?   @map("created_by") // User ID who created (if internal)
+  updatedBy       String?   @map("updated_by") // User ID who last updated
+
+  // Relations
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  // Indexes for performance and uniqueness
+  @@unique([organizationId, phone]) // Phone must be unique per tenant
+  @@index([organizationId]) // Fast tenant-based queries
+  @@index([phone]) // Fast phone lookups
+  @@index([organizationId, lastName]) // Fast name searches
+  @@map("customers")
+}
+
+// Users are internal admin users who can access the admin dashboard
+// They are mapped to Clerk users via clerkUserId
+model User {
+  id              String   @id @default(cuid())
+  organizationId  String   @map("organization_id")
+  clerkUserId     String   @unique @map("clerk_user_id") // Maps to Clerk user ID
+
+  // User information
+  email           String
+  firstName       String   @map("first_name")
+  lastName        String   @map("last_name")
+
+  // Role in this organization (Super Admin, Manager, Viewer)
+  role            UserRole
+
+  // Tracking
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  // Indexes
+  @@unique([organizationId, email]) // Email must be unique per tenant
+  @@index([organizationId])
+  @@index([clerkUserId])
+  @@map("users")
+}
+
+// Enum for user roles with hierarchical permissions
+enum UserRole {
+  SUPER_ADMIN // Full access - can manage users, settings, customers
+  MANAGER     // Can manage customers but not users or settings
+  VIEWER      // Read-only access to customers
+}
+
+// Organization-specific settings (country, formatting preferences, etc.)
+model OrganizationSettings {
+  id              String   @id @default(cuid())
+  organizationId  String   @unique @map("organization_id")
+
+  // Settings
+  country         String   @default("United States") // Determines phone formatting
+
+  // Tracking
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@map("organization_settings")
+}

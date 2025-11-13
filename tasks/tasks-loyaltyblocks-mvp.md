@@ -104,37 +104,37 @@ Update the file after completing each sub-task, not just after completing an ent
 
 ### Phase 1: Multi-Tenant Architecture & Database Setup
 
-- [ ] 1.0 Set up Clerk authentication and tenant context
-  - [ ] 1.1 Install and configure Clerk in the Next.js project
-  - [ ] 1.2 Create Clerk API routes for authentication flow
-  - [ ] 1.3 Set up Clerk metadata schema to store tenant_id and user role
-  - [ ] 1.4 Create `lib/auth.ts` with utility functions for getting current user and checking roles
-  - [ ] 1.5 Add Clerk provider to root layout (`app/layout.tsx`)
+- [x] 1.0 Set up Clerk authentication and tenant context
+  - [x] 1.1 Install and configure Clerk in the Next.js project
+  - [x] 1.2 Create Clerk API routes for authentication flow
+  - [x] 1.3 Set up Clerk metadata schema to store tenant_id and user role
+  - [x] 1.4 Create `lib/auth.ts` with utility functions for getting current user and checking roles
+  - [x] 1.5 Add Clerk provider to root layout (`app/layout.tsx`)
 
-- [ ] 1.1 Design and implement database schema
-  - [ ] 1.1.1 Create Prisma schema with all required tables: organizations, customers, users, organization_settings
-  - [ ] 1.1.2 Add Row-Level Security (RLS) considerations in schema design (tenant_id on all tables)
-  - [ ] 1.1.3 Define relationships and foreign key constraints
-  - [ ] 1.1.4 Create database indexes on tenant_id for performance
-  - [ ] 1.1.5 Document schema design in comments
+- [x] 1.1 Design and implement database schema
+  - [x] 1.1.1 Create Prisma schema with all required tables: organizations, customers, users, organization_settings
+  - [x] 1.1.2 Add Row-Level Security (RLS) considerations in schema design (tenant_id on all tables)
+  - [x] 1.1.3 Define relationships and foreign key constraints
+  - [x] 1.1.4 Create database indexes on tenant_id for performance
+  - [x] 1.1.5 Document schema design in comments
 
-- [ ] 1.2 Set up tenant context and middleware
-  - [ ] 1.2.1 Create `lib/tenant-context.ts` with utilities to extract and manage tenant context
-  - [ ] 1.2.2 Implement `middleware.ts` to extract tenant ID from URL and validate against user's tenants
-  - [ ] 1.2.3 Create tenant context provider/header for passing tenant ID through requests
-  - [ ] 1.2.4 Test middleware with multiple tenants to ensure proper isolation
+- [x] 1.2 Set up tenant context and middleware
+  - [x] 1.2.1 Create `lib/tenant-context.ts` with utilities to extract and manage tenant context
+  - [x] 1.2.2 Implement `middleware.ts` to extract tenant ID from URL and validate against user's tenants
+  - [x] 1.2.3 Create tenant context provider/header for passing tenant ID through requests
+  - [x] 1.2.4 Test middleware with multiple tenants to ensure proper isolation
 
-- [ ] 1.3 Create database connection and Prisma client
-  - [ ] 1.3.1 Set up Neon PostgreSQL connection string in `.env.local`
-  - [ ] 1.3.2 Initialize Prisma client in `lib/db.ts`
-  - [ ] 1.3.3 Create and run Prisma migrations to set up initial schema
-  - [ ] 1.3.4 Set up database seeding script for development (`lib/db/seed.ts`)
+- [x] 1.3 Create database connection and Prisma client
+  - [x] 1.3.1 Set up Neon PostgreSQL connection string in `.env.local`
+  - [x] 1.3.2 Initialize Prisma client in `lib/db.ts`
+  - [x] 1.3.3 Create and run Prisma migrations to set up initial schema
+  - [x] 1.3.4 Set up database seeding script for development (`lib/db/seed.ts`)
 
-- [ ] 1.4 Implement RBAC (Role-Based Access Control) system
-  - [ ] 1.4.1 Create `lib/middleware/rbac.ts` with role checking utilities
-  - [ ] 1.4.2 Implement middleware to enforce role-based access on protected routes
-  - [ ] 1.4.3 Create utility to check permissions for specific actions (view, edit, delete, create)
-  - [ ] 1.4.4 Write unit tests for RBAC logic (`lib/middleware/rbac.test.ts`)
+- [x] 1.4 Implement RBAC (Role-Based Access Control) system
+  - [x] 1.4.1 Create `lib/middleware/rbac.ts` with role checking utilities
+  - [x] 1.4.2 Implement middleware to enforce role-based access on protected routes
+  - [x] 1.4.3 Create utility to check permissions for specific actions (view, edit, delete, create)
+  - [x] 1.4.4 Write unit tests for RBAC logic (`lib/middleware/rbac.test.ts`)
 
 ### Phase 2: Public Customer Registration
 
