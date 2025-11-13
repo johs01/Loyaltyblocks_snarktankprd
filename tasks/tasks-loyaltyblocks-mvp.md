@@ -99,8 +99,8 @@ Update the file after completing each sub-task, not just after completing an ent
 
 ### Phase 0: Project Setup
 
-- [ ] 0.0 Create feature branch
-  - [ ] 0.1 Create and checkout a new branch for this feature (e.g., `git checkout -b feature/loyaltyblocks-mvp`)
+- [x] 0.0 Create feature branch
+  - [x] 0.1 Create and checkout a new branch for this feature (e.g., `git checkout -b feature/loyaltyblocks-mvp`)
 
 ### Phase 1: Multi-Tenant Architecture & Database Setup
 
