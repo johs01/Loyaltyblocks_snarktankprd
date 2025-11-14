@@ -261,34 +261,34 @@ Update the file after completing each sub-task, not just after completing an ent
 
 ### Phase 5: Settings & Configuration
 
-- [ ] 5.0 Implement tenant settings data model
-  - [ ] 5.0.1 Add `organization_settings` table to Prisma schema
-  - [ ] 5.0.2 Define fields: country (default: "United States"), created_at, updated_at
-  - [ ] 5.0.3 Create unique constraint on organization_id
-  - [ ] 5.0.4 Run Prisma migration for new settings table
+- [x] 5.0 Implement tenant settings data model
+  - [x] 5.0.1 Add `organization_settings` table to Prisma schema
+  - [x] 5.0.2 Define fields: country (default: "United States"), created_at, updated_at
+  - [x] 5.0.3 Create unique constraint on organization_id
+  - [x] 5.0.4 Run Prisma migration for new settings table
 
-- [ ] 5.1 Create settings page and UI
-  - [ ] 5.1.1 Create `components/CountrySelector.tsx` dropdown component
-  - [ ] 5.1.2 Create `app/[tenantId]/admin/settings/page.tsx` for settings page
-  - [ ] 5.1.3 Load current country setting from database
-  - [ ] 5.1.4 Implement country dropdown with all countries (alphabetically sorted)
-  - [ ] 5.1.5 Add save button and success/error feedback messages
-  - [ ] 5.1.6 Restrict access to super admin only (RBAC)
+- [x] 5.1 Create settings page and UI
+  - [x] 5.1.1 Create `components/CountrySelector.tsx` dropdown component
+  - [x] 5.1.2 Create `app/[tenantId]/admin/settings/page.tsx` for settings page
+  - [x] 5.1.3 Load current country setting from database
+  - [x] 5.1.4 Implement country dropdown with all countries (alphabetically sorted)
+  - [x] 5.1.5 Add save button and success/error feedback messages
+  - [x] 5.1.6 Restrict access to super admin only (RBAC)
 
-- [ ] 5.2 Create settings API endpoint
-  - [ ] 5.2.1 Create `api/[tenantId]/settings/route.ts` for GET and PUT
-  - [ ] 5.2.2 Implement GET to retrieve current tenant settings
-  - [ ] 5.2.3 Implement PUT to update settings (country selection)
-  - [ ] 5.2.4 Add RBAC check (super admin only)
-  - [ ] 5.2.5 Validate country value against available countries list
-  - [ ] 5.2.6 Add proper error handling
+- [x] 5.2 Create settings API endpoint
+  - [x] 5.2.1 Create `api/[tenantId]/settings/route.ts` for GET and PUT
+  - [x] 5.2.2 Implement GET to retrieve current tenant settings
+  - [x] 5.2.3 Implement PUT to update settings (country selection)
+  - [x] 5.2.4 Add RBAC check (super admin only)
+  - [x] 5.2.5 Validate country value against available countries list
+  - [x] 5.2.6 Add proper error handling
 
-- [ ] 5.3 Integrate settings with registration form
-  - [ ] 5.3.1 Fetch tenant settings in registration form (country setting)
-  - [ ] 5.3.2 Update phone number formatting based on selected country
-  - [ ] 5.3.3 Dynamically update phone validation rules based on country
-  - [ ] 5.3.4 Test that phone format changes immediately after settings update
-  - [ ] 5.3.5 Handle country change for existing registered customers (display purposes)
+- [x] 5.3 Integrate settings with registration form
+  - [x] 5.3.1 Fetch tenant settings in registration form (country setting)
+  - [x] 5.3.2 Update phone number formatting based on selected country
+  - [x] 5.3.3 Dynamically update phone validation rules based on country
+  - [x] 5.3.4 Test that phone format changes immediately after settings update
+  - [x] 5.3.5 Handle country change for existing registered customers (display purposes)
 
 ### Phase 6: Testing & Quality Assurance
 
