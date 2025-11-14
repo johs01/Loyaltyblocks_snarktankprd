@@ -106,6 +106,7 @@ export async function POST(
         customerId: string;
         isFirstCustomer: boolean;
         message: string;
+        email?: string;
       }>>(
         {
           success: true,
@@ -113,8 +114,9 @@ export async function POST(
             customerId: customer.id,
             isFirstCustomer,
             message: isFirstCustomer
-              ? "Registration successful! You are the first customer."
+              ? "Registration successful! You are the first customer. Please check your email for admin access instructions."
               : "Registration successful!",
+            ...(isFirstCustomer && body.email && { email: body.email }),
           },
         },
         { status: 201 }

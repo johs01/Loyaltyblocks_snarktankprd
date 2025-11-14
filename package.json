@@ -21,7 +21,8 @@
     "libphonenumber-js": "^1.11.19",
     "next": "^15.2.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "svix": "^1.40.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",

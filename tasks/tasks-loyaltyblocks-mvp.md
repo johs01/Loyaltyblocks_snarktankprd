@@ -177,40 +177,40 @@ Update the file after completing each sub-task, not just after completing an ent
 
 ### Phase 3: Admin Dashboard & Internal User Management
 
-- [ ] 3.0 Create admin dashboard layout and navigation
-  - [ ] 3.0.1 Create `app/[tenantId]/admin/layout.tsx` with protected routes
-  - [ ] 3.0.2 Add RBAC middleware to protect admin routes (require authenticated user)
-  - [ ] 3.0.3 Create `components/Navigation.tsx` with links to Customers, Settings, Users
-  - [ ] 3.0.4 Create `app/[tenantId]/admin/page.tsx` as dashboard home
-  - [ ] 3.0.5 Implement mobile-responsive navigation menu
+- [x] 3.0 Create admin dashboard layout and navigation
+  - [x] 3.0.1 Create `app/[tenantId]/admin/layout.tsx` with protected routes
+  - [x] 3.0.2 Add RBAC middleware to protect admin routes (require authenticated user)
+  - [x] 3.0.3 Create `components/Navigation.tsx` with links to Customers, Settings, Users
+  - [x] 3.0.4 Create `app/[tenantId]/admin/page.tsx` as dashboard home
+  - [x] 3.0.5 Implement mobile-responsive navigation menu
 
-- [ ] 3.1 Implement first registrant as super admin logic
-  - [ ] 3.1.1 Modify registration API to check if first customer in tenant
-  - [ ] 3.1.2 Create first registrant as internal user with super admin role
-  - [ ] 3.1.3 Create organization record on first registration
-  - [ ] 3.1.4 Map Clerk user to internal user in users table
-  - [ ] 3.1.5 Test that subsequent registrants do not get admin privileges
+- [x] 3.1 Implement first registrant as super admin logic
+  - [x] 3.1.1 Modify registration API to check if first customer in tenant
+  - [x] 3.1.2 Create first registrant as internal user with super admin role
+  - [x] 3.1.3 Create organization record on first registration
+  - [x] 3.1.4 Map Clerk user to internal user in users table
+  - [x] 3.1.5 Test that subsequent registrants do not get admin privileges
 
-- [ ] 3.2 Build internal user management interface
-  - [ ] 3.2.1 Create `app/[tenantId]/admin/users/page.tsx` to list internal users
-  - [ ] 3.2.2 Create `app/[tenantId]/admin/users/create/page.tsx` for user creation form
-  - [ ] 3.2.3 Implement role selection dropdown (Super Admin, Manager, Viewer)
-  - [ ] 3.2.4 Add user list with edit/delete actions
-  - [ ] 3.2.5 Implement delete confirmation dialog with proper RBAC checks
+- [x] 3.2 Build internal user management interface
+  - [x] 3.2.1 Create `app/[tenantId]/admin/users/page.tsx` to list internal users
+  - [x] 3.2.2 Create `app/[tenantId]/admin/users/create/page.tsx` for user creation form
+  - [x] 3.2.3 Implement role selection dropdown (Super Admin, Manager, Viewer)
+  - [x] 3.2.4 Add user list with edit/delete actions
+  - [x] 3.2.5 Implement delete confirmation dialog with proper RBAC checks
 
-- [ ] 3.3 Create internal user management API
-  - [ ] 3.3.1 Create `api/[tenantId]/users/route.ts` for GET (list) and POST (create)
-  - [ ] 3.3.2 Implement role assignment in create endpoint
-  - [ ] 3.3.3 Add RBAC checks (only super admin can create/modify users)
-  - [ ] 3.3.4 Validate email format and check for duplicates within tenant
-  - [ ] 3.3.5 Implement user creation with Clerk integration (or email-based invitation)
-  - [ ] 3.3.6 Add proper error handling and validation
+- [x] 3.3 Create internal user management API
+  - [x] 3.3.1 Create `api/[tenantId]/users/route.ts` for GET (list) and POST (create)
+  - [x] 3.3.2 Implement role assignment in create endpoint
+  - [x] 3.3.3 Add RBAC checks (only super admin can create/modify users)
+  - [x] 3.3.4 Validate email format and check for duplicates within tenant
+  - [x] 3.3.5 Implement user creation with Clerk integration (or email-based invitation)
+  - [x] 3.3.6 Add proper error handling and validation
 
-- [ ] 3.4 Implement role-based access control on UI and routes
-  - [ ] 3.4.1 Create utility function to check user role from Clerk metadata
-  - [ ] 3.4.2 Add RBAC guards to admin routes (only authenticated users)
-  - [ ] 3.4.3 Conditionally render UI components based on user role (e.g., hide delete button for Viewers)
-  - [ ] 3.4.4 Test RBAC on all admin routes with different roles
+- [x] 3.4 Implement role-based access control on UI and routes
+  - [x] 3.4.1 Create utility function to check user role from Clerk metadata
+  - [x] 3.4.2 Add RBAC guards to admin routes (only authenticated users)
+  - [x] 3.4.3 Conditionally render UI components based on user role (e.g., hide delete button for Viewers)
+  - [x] 3.4.4 Test RBAC on all admin routes with different roles
 
 ### Phase 4: Customer Database Management
 
