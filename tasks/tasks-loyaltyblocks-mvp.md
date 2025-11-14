@@ -214,50 +214,50 @@ Update the file after completing each sub-task, not just after completing an ent
 
 ### Phase 4: Customer Database Management
 
-- [ ] 4.0 Create customer list view
-  - [ ] 4.0.1 Create `components/CustomerTable.tsx` with search, sort, pagination
-  - [ ] 4.0.2 Implement search by name and phone number
-  - [ ] 4.0.3 Implement sorting by all columns (Name, Phone, Birth Date, Date Added)
-  - [ ] 4.0.4 Implement pagination with configurable page size (default 50)
-  - [ ] 4.0.5 Create `app/[tenantId]/admin/customers/page.tsx` to render the list
-  - [ ] 4.0.6 Add action buttons (Edit, Delete) with proper RBAC checks
+- [x] 4.0 Create customer list view
+  - [x] 4.0.1 Create `components/CustomerTable.tsx` with search, sort, pagination
+  - [x] 4.0.2 Implement search by name and phone number
+  - [x] 4.0.3 Implement sorting by all columns (Name, Phone, Birth Date, Date Added)
+  - [x] 4.0.4 Implement pagination with configurable page size (default 50)
+  - [x] 4.0.5 Create `app/[tenantId]/admin/customers/page.tsx` to render the list
+  - [x] 4.0.6 Add action buttons (Edit, Delete) with proper RBAC checks
 
-- [ ] 4.1 Create customer detail view
-  - [ ] 4.1.1 Create `app/[tenantId]/admin/customers/[customerId]/page.tsx` for detail view
-  - [ ] 4.1.2 Display all customer information (personal, contact, address, metadata)
-  - [ ] 4.1.3 Show created/modified timestamps and user information
-  - [ ] 4.1.4 Add edit and delete buttons with RBAC checks
-  - [ ] 4.1.5 Implement mobile-responsive detail layout
+- [x] 4.1 Create customer detail view
+  - [x] 4.1.1 Create `app/[tenantId]/admin/customers/[customerId]/page.tsx` for detail view
+  - [x] 4.1.2 Display all customer information (personal, contact, address, metadata)
+  - [x] 4.1.3 Show created/modified timestamps and user information
+  - [x] 4.1.4 Add edit and delete buttons with RBAC checks
+  - [x] 4.1.5 Implement mobile-responsive detail layout
 
-- [ ] 4.2 Implement add customer functionality (internal)
-  - [ ] 4.2.1 Create `components/CustomerForm.tsx` reusable form component
-  - [ ] 4.2.2 Create `app/[tenantId]/admin/customers/add/page.tsx` for add customer form
-  - [ ] 4.2.3 Implement all form fields (name, surname, phone, birthdate, address, email)
-  - [ ] 4.2.4 Reuse phone validation and formatting from public registration
-  - [ ] 4.2.5 Add real-time validation and error messages
-  - [ ] 4.2.6 Implement modal or page-based form UI
+- [x] 4.2 Implement add customer functionality (internal)
+  - [x] 4.2.1 Create `components/CustomerForm.tsx` reusable form component
+  - [x] 4.2.2 Create `app/[tenantId]/admin/customers/add/page.tsx` for add customer form
+  - [x] 4.2.3 Implement all form fields (name, surname, phone, birthdate, address, email)
+  - [x] 4.2.4 Reuse phone validation and formatting from public registration
+  - [x] 4.2.5 Add real-time validation and error messages
+  - [x] 4.2.6 Implement modal or page-based form UI
 
-- [ ] 4.3 Implement edit customer functionality
-  - [ ] 4.3.1 Modify `components/CustomerForm.tsx` to support edit mode
-  - [ ] 4.3.2 Pre-populate form with existing customer data
-  - [ ] 4.3.3 Implement phone number uniqueness check (excluding current customer)
-  - [ ] 4.3.4 Add confirmation dialog before saving changes
-  - [ ] 4.3.5 Track modification timestamp and user who modified the record
+- [x] 4.3 Implement edit customer functionality
+  - [x] 4.3.1 Modify `components/CustomerForm.tsx` to support edit mode
+  - [x] 4.3.2 Pre-populate form with existing customer data
+  - [x] 4.3.3 Implement phone number uniqueness check (excluding current customer)
+  - [x] 4.3.4 Add confirmation dialog before saving changes
+  - [x] 4.3.5 Track modification timestamp and user who modified the record
 
-- [ ] 4.4 Implement delete customer functionality
-  - [ ] 4.4.1 Add delete confirmation dialog in customer detail page
-  - [ ] 4.4.2 Implement delete action with RBAC checks (Manager+ only)
-  - [ ] 4.4.3 Log deletion action with timestamp and user who deleted
-  - [ ] 4.4.4 Perform hard delete from database (per requirements)
-  - [ ] 4.4.5 Add success message and redirect after deletion
+- [x] 4.4 Implement delete customer functionality
+  - [x] 4.4.1 Add delete confirmation dialog in customer detail page
+  - [x] 4.4.2 Implement delete action with RBAC checks (Manager+ only)
+  - [x] 4.4.3 Log deletion action with timestamp and user who deleted
+  - [x] 4.4.4 Perform hard delete from database (per requirements)
+  - [x] 4.4.5 Add success message and redirect after deletion
 
-- [ ] 4.5 Create customer API endpoints
-  - [ ] 4.5.1 Create `api/[tenantId]/customers/route.ts` for GET (list), POST (create)
-  - [ ] 4.5.2 Create `api/[tenantId]/customers/[customerId]/route.ts` for GET, PUT, DELETE
-  - [ ] 4.5.3 Implement RBAC checks on all endpoints (Viewer=read-only, Manager+=CRUD)
-  - [ ] 4.5.4 Implement proper pagination and filtering on GET list
-  - [ ] 4.5.5 Add input validation and sanitization
-  - [ ] 4.5.6 Implement error handling with appropriate HTTP status codes
+- [x] 4.5 Create customer API endpoints
+  - [x] 4.5.1 Create `api/[tenantId]/customers/route.ts` for GET (list), POST (create)
+  - [x] 4.5.2 Create `api/[tenantId]/customers/[customerId]/route.ts` for GET, PUT, DELETE
+  - [x] 4.5.3 Implement RBAC checks on all endpoints (Viewer=read-only, Manager+=CRUD)
+  - [x] 4.5.4 Implement proper pagination and filtering on GET list
+  - [x] 4.5.5 Add input validation and sanitization
+  - [x] 4.5.6 Implement error handling with appropriate HTTP status codes
 
 ### Phase 5: Settings & Configuration
 
