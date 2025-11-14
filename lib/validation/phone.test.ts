@@ -25,7 +25,7 @@ jest.mock("../db", () => ({
 
 // Mock phone formatter
 jest.mock("../phone-formatter", () => ({
-  validateAndFormatPhone: jest.fn((phone, country) => {
+  validateAndFormatPhone: jest.fn((phone) => {
     if (phone === "+11234567890") {
       return { isValid: true, formatted: "+11234567890" };
     }
