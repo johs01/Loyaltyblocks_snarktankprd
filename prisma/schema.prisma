@@ -59,6 +59,8 @@ model Customer {
 
   // Relations
   organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  creator         User?        @relation("CustomerCreator", fields: [createdBy], references: [id], onDelete: SetNull)
+  updater         User?        @relation("CustomerUpdater", fields: [updatedBy], references: [id], onDelete: SetNull)
 
   // Indexes for performance and uniqueness
   @@unique([organizationId, phone]) // Phone must be unique per tenant
@@ -88,7 +90,9 @@ model User {
   updatedAt       DateTime @updatedAt @map("updated_at")
 
   // Relations
-  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  organization      Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  customersCreated  Customer[]   @relation("CustomerCreator")
+  customersUpdated  Customer[]   @relation("CustomerUpdater")
 
   // Indexes
   @@unique([organizationId, email]) // Email must be unique per tenant
