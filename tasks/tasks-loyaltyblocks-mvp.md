@@ -138,42 +138,42 @@ Update the file after completing each sub-task, not just after completing an ent
 
 ### Phase 2: Public Customer Registration
 
-- [ ] 2.0 Implement phone number validation and formatting
-  - [ ] 2.0.1 Install `libphonenumber-js` library for phone validation
-  - [ ] 2.0.2 Create `lib/countries.ts` with list of countries and phone format mappings
-  - [ ] 2.0.3 Create `lib/phone-formatter.ts` with formatting and validation functions
-  - [ ] 2.0.4 Write unit tests for phone formatting (`lib/phone-formatter.test.ts`)
-  - [ ] 2.0.5 Create `lib/validation/phone.ts` with phone uniqueness check utility
+- [x] 2.0 Implement phone number validation and formatting
+  - [x] 2.0.1 Install `libphonenumber-js` library for phone validation
+  - [x] 2.0.2 Create `lib/countries.ts` with list of countries and phone format mappings
+  - [x] 2.0.3 Create `lib/phone-formatter.ts` with formatting and validation functions
+  - [x] 2.0.4 Write unit tests for phone formatting (`lib/phone-formatter.test.ts`)
+  - [x] 2.0.5 Create `lib/validation/phone.ts` with phone uniqueness check utility
 
-- [ ] 2.1 Build reusable form components
-  - [ ] 2.1.1 Create `components/PhoneInput.tsx` with real-time validation and formatting
-  - [ ] 2.1.2 Create `components/DatePicker.tsx` for birthdate selection
-  - [ ] 2.1.3 Create `components/ConsentCheckbox.tsx` with pre-checked state
-  - [ ] 2.1.4 Create `components/ConfirmationDialog.tsx` for confirmation modals
-  - [ ] 2.1.5 Ensure all components are mobile-responsive and accessible (WCAG 2.1 AA)
+- [x] 2.1 Build reusable form components
+  - [x] 2.1.1 Create `components/PhoneInput.tsx` with real-time validation and formatting
+  - [x] 2.1.2 Create `components/DatePicker.tsx` for birthdate selection
+  - [x] 2.1.3 Create `components/ConsentCheckbox.tsx` with pre-checked state
+  - [x] 2.1.4 Create `components/ConfirmationDialog.tsx` for confirmation modals
+  - [x] 2.1.5 Ensure all components are mobile-responsive and accessible (WCAG 2.1 AA)
 
-- [ ] 2.2 Create public registration form and page
-  - [ ] 2.2.1 Create `app/[tenantId]/add-customer/components/RegistrationForm.tsx` component
-  - [ ] 2.2.2 Implement real-time validation for all fields (name, surname, phone, birthdate)
-  - [ ] 2.2.3 Add real-time phone duplicate check with visual feedback
-  - [ ] 2.2.4 Create `app/[tenantId]/add-customer/page.tsx` to render the form
-  - [ ] 2.2.5 Implement mobile-first responsive design for the registration form
-  - [ ] 2.2.6 Create `app/[tenantId]/add-customer/success/page.tsx` for success confirmation
+- [x] 2.2 Create public registration form and page
+  - [x] 2.2.1 Create `app/[tenantId]/add-customer/components/RegistrationForm.tsx` component
+  - [x] 2.2.2 Implement real-time validation for all fields (name, surname, phone, birthdate)
+  - [x] 2.2.3 Add real-time phone duplicate check with visual feedback
+  - [x] 2.2.4 Create `app/[tenantId]/add-customer/page.tsx` to render the form
+  - [x] 2.2.5 Implement mobile-first responsive design for the registration form
+  - [x] 2.2.6 Create `app/[tenantId]/add-customer/success/page.tsx` for success confirmation
 
-- [ ] 2.3 Implement registration API endpoint
-  - [ ] 2.3.1 Create `api/[tenantId]/auth/register/route.ts` for customer registration
-  - [ ] 2.3.2 Implement input validation and sanitization
-  - [ ] 2.3.3 Implement phone number uniqueness check at database level
-  - [ ] 2.3.4 Store customer data with tenant_id in database
-  - [ ] 2.3.5 Implement rate limiting on registration endpoint
-  - [ ] 2.3.6 Add error handling and user-friendly error messages
+- [x] 2.3 Implement registration API endpoint
+  - [x] 2.3.1 Create `api/[tenantId]/auth/register/route.ts` for customer registration
+  - [x] 2.3.2 Implement input validation and sanitization
+  - [x] 2.3.3 Implement phone number uniqueness check at database level
+  - [x] 2.3.4 Store customer data with tenant_id in database
+  - [x] 2.3.5 Implement rate limiting on registration endpoint
+  - [x] 2.3.6 Add error handling and user-friendly error messages
 
-- [ ] 2.4 Implement phone validation API endpoint
-  - [ ] 2.4.1 Create `api/[tenantId]/customers/validate-phone/route.ts` endpoint
-  - [ ] 2.4.2 Implement real-time phone format validation
-  - [ ] 2.4.3 Implement real-time duplicate phone check
-  - [ ] 2.4.4 Return validation status and formatted phone number
-  - [ ] 2.4.5 Add proper error handling and responses
+- [x] 2.4 Implement phone validation API endpoint
+  - [x] 2.4.1 Create `api/[tenantId]/customers/validate-phone/route.ts` endpoint
+  - [x] 2.4.2 Implement real-time phone format validation
+  - [x] 2.4.3 Implement real-time duplicate phone check
+  - [x] 2.4.4 Return validation status and formatted phone number
+  - [x] 2.4.5 Add proper error handling and responses
 
 ### Phase 3: Admin Dashboard & Internal User Management
 
